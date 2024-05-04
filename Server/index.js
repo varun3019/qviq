@@ -12,6 +12,11 @@ mongoose.connect("mongodb://127.0.0.1:27017/qviz", {
   useUnifiedTopology: true
 });
 
+app.get("/",(req,res)=>
+{ 
+    res.json("Hello")
+})
+
 app.post('/register', async (req, res) => {
   try {
     const employee = await EmployeeModal.create(req.body);
